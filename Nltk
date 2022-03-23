@@ -1,0 +1,18 @@
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+file=open('E:\TYCS\IR\\pract.txt','r')
+sent=file.read()
+stop=set(stopwords.words('english'))
+token=word_tokenize(sent)
+a=[]
+for w in token:
+    if w not in stop:
+        a.append(w)
+print("Original Sentence:",token)
+print("\n Stop Words:",stop)
+print("\n Stop Words Removal:",a)
+print("\n")
+print(" ".join(a))
