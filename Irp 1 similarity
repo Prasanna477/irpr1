@@ -1,0 +1,49 @@
+from collections import Counter
+
+
+def wordFrequencies(filename):
+    d = dict()  # dict to be returned
+    with open(filename, "r") as file:
+        print("file :", filename)
+        lines = 0  # lines count
+        words = 0  # words count
+        for line in file:
+            # print(line)
+            lines += 1
+            for word in line.split():
+                words += 1
+                if word in d.keys():
+                    d[word] = d[word] + 1  # if exists increment the value
+                else:
+                    d[word] = 1  # create a key with value as 1
+    print("No of Lines :", lines)
+    print("No of Words : ", words)
+    print()
+    return d  # return the dict
+
+
+def fn(filename):
+    with open(filename, "r") as file:
+        res = Counter()
+        for line in file:
+            res += Counter(line.split())
+    return res
+
+
+def similarWords(dict1, dict2):
+    result = []
+    for key in dict1.keys():
+        if key in dict2.keys():
+            result.append(key)
+    return result
+
+
+d1 = fn("file1.txt")  # scan file1
+d2 = fn("file2.txt")  # scan file2
+similar_words = similarWords(d1, d2)
+
+print("d1 : ", d1)
+print("d2 : ", d2)
+print()
+print("similar words are: ")
+print(similar_words)
