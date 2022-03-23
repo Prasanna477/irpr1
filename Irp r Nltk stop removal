@@ -1,0 +1,40 @@
+import numpy
+import nltk
+nltk. download ()
+
+Stop words
+Toolbox 
+Web text
+Wordnet 
+Wordnet ic 
+Model- punkt
+
+
+
+
+
+from nltk.corpus
+import
+stopwords
+from nltk. tokenize import word tokenize
+example
+sent="This
+is
+sample
+sentence, python is
+stop
+words=set (stopwords. words ('english))
+word tokens=word
+tokenize (example
+sent)
+filtered
+sentence=[w for w in word tokens if not w
+filtered
+sentence=[]
+for
+W in word
+tokens:
+if w not In stop words:
+filtered sentence.append (w)
+print (word tokens)
+print (filtered sentence)
